@@ -1,4 +1,4 @@
-#Ponia-Onia
+#Onia2MuMu Rootupler
 
 The Onia2MuMu Rootupler. This package is mean to be run after the BPH CompactSkim. 
 
@@ -13,15 +13,39 @@ source /cvmfs/cms.cern.ch/cmsset_default.sh
 cmsrel CMSSW_7_4_6_patch6
 cd CMSSW_7_4_6_patch6/src/
 cmsenv
-git clone https://github.com/alberto-sanchez/Ponia-Onia.git Ponia/Onia
+git clone git@github.com:zhenhu/dimuon.git
+cd dimuon/Onia/
 scram b
 ```
 
 * Run: (use your favorite input sample)
 
 ```
-vi Ponia/Onia/test/runOnia2MuMuRootupler.py
-cmsRun Ponia/Onia/test/runOnia2MuMuRootupler.py
+cd test
+vi runOnia2MuMuRootupler.py
+cmsRun runOnia2MuMuRootupler.py
+```
+
+#Make the dimuom mass spectrum plot
+
+* Produce root trees with this package for each dataset. 
+You may need to add more trigger paths in Onia/src/Onia2MuMuRootupler.cc 
+The crab configs are in Onia/test/crabJobs/
+
+* Draw a plot for a single dataset 
+```
+root -l runSinglePD.C++
+```
+
+* Produce data subsets for different triggers 
+```
+root -l runGetTriggerSubset.C++
+```
+
+* Draw combined plot 
+Switch back to ROOT5
+```
+root -l DrawPlot.C
 ```
 
 #CompactSkim
