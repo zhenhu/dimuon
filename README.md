@@ -13,7 +13,7 @@ source /cvmfs/cms.cern.ch/cmsset_default.sh
 cmsrel CMSSW_7_4_6_patch6
 cd CMSSW_7_4_6_patch6/src/
 cmsenv
-git clone git@github.com:zhenhu/dimuon.git
+git clone git@github.com:zhenhu/dimuon.git dimuon/Onia
 cd dimuon/Onia/
 scram b
 ```
