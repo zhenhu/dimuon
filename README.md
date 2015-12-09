@@ -26,11 +26,13 @@ vi runOnia2MuMuRootupler.py
 cmsRun runOnia2MuMuRootupler.py
 ```
 
-#Make the dimuom mass spectrum plot
-
 * Produce root trees with this package for each dataset. 
-You may need to add more trigger paths in Onia/src/Onia2MuMuRootupler.cc 
+
+You may need to add more trigger paths in Onia/src/Onia2MuMuRootupler.cc     
+
 The crab configs are in Onia/test/crabJobs/
+
+#Make the dimuom mass spectrum plot
 
 * Draw a plot for a single dataset 
 ```
