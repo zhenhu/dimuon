@@ -53,7 +53,7 @@ void DrawPlot() {
 
 	writeExtraText = true;       // if extra text
 	//extraText  = "Preliminary";  // default extra text is "Preliminary"
-	lumi_13TeV = "1019 pb^{-1}";
+	lumi_13TeV = "2.6 fb^{-1}";
 	lumi_8TeV  = "19.1 fb^{-1}"; // default is "19.7 fb^{-1}"
 	lumi_7TeV  = "4.9 fb^{-1}";  // default is "5.1 fb^{-1}"
 	int iPeriod = 4;    // 1=7TeV, 2=8TeV, 3=7+8TeV, 4=13TeV, 7=7+8+13TeV 
@@ -62,7 +62,7 @@ void DrawPlot() {
 	double xbins[100000];
 	xbins[0] = .1;
 	int nbins = 0;
-	double binWidth=0.01; 
+	double binWidth=0.004;//0.01; 
 	for (int i=1; xbins[i-1]<500; i++) {
 		xbins[i] = xbins[i-1]*(1+binWidth);
 		nbins++;
@@ -74,36 +74,43 @@ void DrawPlot() {
 	GetHist("Rootuple_TriggerSubset/DoubleMuon_Subset.root",hDoubleMuon);
 	hDoubleMuon->SetFillColor(kGray);
 	hDoubleMuon->SetLineColor(kGray);
+	hDoubleMuon->SetLineWidth(0);
 
 	TH1F *hLowMass = new TH1F("hLowMass","hLowMass",nbins,xbins);
 	GetHist("Rootuple_TriggerSubset/DoubleMuonLowMass_Subset.root",hLowMass);
 	hLowMass->SetFillColor(kBlue-5);
 	hLowMass->SetLineColor(kBlue-5);
+	hLowMass->SetLineWidth(0);
 
 	TH1F *hphi = new TH1F("hphi","hphi",nbins,xbins);
 	GetHist("Rootuple_TriggerSubset/MuOnia_phiSubset.root",hphi);
 	hphi->SetFillColor(kMagenta);
 	hphi->SetLineColor(kMagenta);
+	hphi->SetLineWidth(0);
 
 	TH1F *hJpsi = new TH1F("hJpsi","hJpsi",nbins,xbins);
 	GetHist("Rootuple_TriggerSubset/Charmonium_JpsiSubset.root",hJpsi);
 	hJpsi->SetFillColor(kRed);
 	hJpsi->SetLineColor(kRed);
+	hJpsi->SetLineWidth(0);
 
 	TH1F *hpsiprime = new TH1F("hpsiprime","hpsiprime",nbins,xbins);
 	GetHist("Rootuple_TriggerSubset/Charmonium_psiprimeSubset.root",hpsiprime);
 	hpsiprime->SetFillColor(kBlue);
 	hpsiprime->SetLineColor(kBlue);
+	hpsiprime->SetLineWidth(0);
 
 	TH1F *hBs = new TH1F("hBs","hBs",nbins,xbins);
 	GetHist("Rootuple_TriggerSubset/Charmonium_BsSubset.root",hBs);
 	hBs->SetFillColor(kCyan);
 	hBs->SetLineColor(kCyan);
+	hBs->SetLineWidth(0);
 
 	TH1F *hUpsilon = new TH1F("hUpsilon","hUpsilon",nbins,xbins);
 	GetHist("Rootuple_TriggerSubset/MuOnia_UpsilonSubset.root",hUpsilon);
 	hUpsilon->SetFillColor(kGreen+1);
 	hUpsilon->SetLineColor(kGreen+1);
+	hUpsilon->SetLineWidth(0);
 
 
 	TH1F *hAll = new TH1F("hAll","hAll",nbins,xbins);
@@ -134,7 +141,7 @@ void DrawPlot() {
 
 	// references for T, B, L, R
 	float T = 0.08*H_ref;
-	float B = 0.12*H_ref; 
+	float B = 0.13*H_ref; 
 	float L = 0.12*W_ref;
 	float R = 0.04*W_ref;
 
@@ -153,7 +160,7 @@ void DrawPlot() {
 	canv->SetLogx();
 	canv->SetLogy();
 
-	TH1F *hFrame= gPad->DrawFrame(0.3, 100, 200, 1e10); //Oct 15, Collisions15_25ns_JSON_MuonPhys_v2.txt
+	TH1F *hFrame= gPad->DrawFrame(0.3, 200, 200, 1e10); //Nov 13, Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_MuonPhys.txt
 	hFrame->SetXTitle("#mu^{+}#mu^{-} invariant mass [GeV]");
 	hFrame->SetYTitle("Events / GeV");
 
@@ -161,13 +168,13 @@ void DrawPlot() {
 	hAll->Draw("HISTsame");
 
 	TLatex Latex;
-	Latex.DrawLatex(0.7,20000*50,"#omega");
-	Latex.DrawLatex(0.955,800000*50,"#phi");
-	Latex.DrawLatex(2.6,2000000*50,"J/#psi");
-	Latex.DrawLatex(3.4,300000*50,"#psi'");
-	Latex.DrawLatex(4.6,40000*50,"B_{s}");
-	Latex.DrawLatex(8.7,100000*50,"#Upsilon");
-	Latex.DrawLatex(85,4000*50,"Z");
+	Latex.DrawLatex(0.7,20000*150,"#omega");
+	Latex.DrawLatex(0.955,800000*150,"#phi");
+	Latex.DrawLatex(2.6,3000000*150,"J/#psi");
+	Latex.DrawLatex(3.4,300000*150,"#psi'");
+	Latex.DrawLatex(4.6,40000*150,"B_{s}");
+	Latex.DrawLatex(8.7,100000*150,"#Upsilon");
+	Latex.DrawLatex(85,4000*150,"Z");
 
 	leg = new TLegend(0.58,0.58,0.94,0.92);
 	leg->SetFillColor(0);
@@ -186,6 +193,6 @@ void DrawPlot() {
 	canv->RedrawAxis();
 	canv->GetFrame()->Draw();
 
-	canv->SaveAs("plots/dimuonMassWithDC_1fb.png");
-	canv->SaveAs("plots/dimuonMassWithDC_1fb.pdf");
+	canv->SaveAs("plots/dimuonMass_Run2015CD_25ns.png");
+	canv->SaveAs("plots/dimuonMass_Run2015CD_25ns.pdf");
 }

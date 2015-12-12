@@ -3,7 +3,8 @@ config = Configuration()
 
 config.section_('General')
 config.General.transferOutputs = True
-config.General.requestName = 'MuOnia2015Dv4'
+config.General.requestName = 'MuOnia2015Cv1'
+#config.General.requestName = 'MuOnia2015Dv4'
 
 config.section_('JobType')
 config.JobType.psetName = '../runOnia2MuMuRootupler.py'
@@ -11,7 +12,8 @@ config.JobType.pluginName = 'Analysis'
 #config.JobType.outputFiles = ['Onia2MuMuPAT.root']
 
 config.section_('Data')
-config.Data.inputDataset = '/MuOnia/zhenhu-Run2015D-Onia2MuMuPAT-v4-ca8022810ea1b04e8e12c6056abc0a7d/USER'
+config.Data.inputDataset = '/MuOnia/zhenhu-Run2015C-Onia2MuMuPAT-v1-ca8022810ea1b04e8e12c6056abc0a7d/USER'
+#config.Data.inputDataset = '/MuOnia/zhenhu-Run2015D-Onia2MuMuPAT-v4-ca8022810ea1b04e8e12c6056abc0a7d/USER'
 config.Data.inputDBS = 'phys03'
 config.Data.unitsPerJob = 50
 config.Data.splitting = 'LumiBased'
@@ -21,7 +23,8 @@ config.Data.splitting = 'LumiBased'
 config.Data.lumiMask = 'https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions15/13TeV/Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_MuonPhys.txt'
 #config.Data.runRange = '193093-193999' # '193093-194075'
 config.Data.publication = True
-config.Data.outputDatasetTag = 'Run2015D-Onia2MuMuRootuple-v4'
+config.Data.outputDatasetTag = 'Run2015C-Onia2MuMuRootuple-v1'
+#config.Data.outputDatasetTag = 'Run2015D-Onia2MuMuRootuple-v4'
 config.Data.ignoreLocality = True
 
 config.section_('User')
