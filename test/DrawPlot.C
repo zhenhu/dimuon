@@ -13,6 +13,7 @@ void GetHist(TString f, TH1F *h)
 	Tree->SetBranchAddress("run", &run, &b_run);
 	Tree->SetBranchAddress("lumi", &lumi, &b_lumi);
 	Int_t nentries = (Int_t)Tree->GetEntries();
+	std::cout<<f<<" entries: "<<nentries<<std::endl;
 	for (Long64_t kentry=0; kentry<nentries;kentry++) {
 		Long64_t lentry = Tree->LoadTree(kentry);
 		if (lentry < 0) break;
@@ -53,7 +54,7 @@ void DrawPlot() {
 
 	writeExtraText = true;       // if extra text
 	//extraText  = "Preliminary";  // default extra text is "Preliminary"
-	lumi_13TeV = "2.6 fb^{-1}";
+	lumi_13TeV = "2.7 fb^{-1}";
 	lumi_8TeV  = "19.1 fb^{-1}"; // default is "19.7 fb^{-1}"
 	lumi_7TeV  = "4.9 fb^{-1}";  // default is "5.1 fb^{-1}"
 	int iPeriod = 4;    // 1=7TeV, 2=8TeV, 3=7+8TeV, 4=13TeV, 7=7+8+13TeV 
