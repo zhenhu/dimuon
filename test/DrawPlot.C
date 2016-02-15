@@ -1,3 +1,6 @@
+#include "tdrstyle.C"
+#include "CMS_lumi.C"
+
 void GetHist(TString f, TH1F *h)
 {
 	TFile *input = TFile::Open(f,"READ");
@@ -47,10 +50,7 @@ void GetHist(TString f, TH1F *h)
 
 void DrawPlot() {
 
-	gROOT->LoadMacro("tdrstyle.C");
 	setTDRStyle();
-
-	gROOT->LoadMacro("CMS_lumi.C");
 
 	writeExtraText = true;       // if extra text
 	//extraText  = "Preliminary";  // default extra text is "Preliminary"
