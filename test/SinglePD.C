@@ -11,7 +11,7 @@ void SinglePD::Loop(TString PD)
 	double xbins[100000];
 	xbins[0] = .1; 
 	int nbins = 0;
-	double binWidth=0.012; 
+	double binWidth=0.005; 
 	for (int i=1; xbins[i-1]<500; i++) {
 		xbins[i] = xbins[i-1]*(1+binWidth);
 		nbins++;
@@ -52,7 +52,7 @@ void SinglePD::Loop(TString PD)
 	TLatex L;
 	L.SetNDC();
 	L.DrawLatex(0.3,0.3,"CMS Preliminary");
-	L.DrawLatex(0.3,0.25,"2015 Run, 47.5 pb^{-1} (13 TeV)");
+	L.DrawLatex(0.3,0.25,"2015 Run, 2.7 fb^{-1} (13 TeV)");
 	L.DrawLatex(0.3,0.2,"PD: "+PD);
 	//L.DrawLatex(0.31,0.82,"#omega");
 	//L.DrawLatex(0.32,0.87,"#phi");

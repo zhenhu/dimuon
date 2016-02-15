@@ -7,8 +7,7 @@ void runSinglePD()
 	TString PD = "Charmonium";        // Bs, Jpsi, psiprime 
 	//TString PD = "MuOnia";            // phi, Upsilon
 
-	chain->Add("/eos/uscms/store/user/zhenhu/"+PD+"/Onia2MuMuRootuple-Run2015D-"+PD+"-v1/RootupleAll.root"); 
-
+	chain->Add("root://cmsxrootd.fnal.gov//store/user/zhenhu/"+PD+"/Rootuple_all.root"); 
 	SinglePD a(chain);
 	a.Loop(PD);
 }

@@ -7,11 +7,11 @@ process.MessageLogger.cerr.FwkReport.reportEvery = 500
 process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 
 process.source = cms.Source("PoolSource",
-   fileNames = cms.untracked.vstring('file:/eos/uscms/store/user/lpcmuon/dimuon/Charmonium/Run2015D-Onia2MuMuPAT-v3/151209_052916/0000/Onia2MuMuPAT_192.root')
+   fileNames = cms.untracked.vstring('root://cmsxrootd.fnal.gov//store/group/lpcmuon/dimuon/Charmonium/Run2015D-Onia2MuMuPAT-v3/151209_052916/0000/Onia2MuMuPAT_1.root')
 )
 
 process.TFileService = cms.Service("TFileService",
-   fileName = cms.string('Rootuple.root'),
+   fileName = cms.string('Rootuple_test.root'),
 )
 
 process.options   = cms.untracked.PSet( wantSummary = cms.untracked.bool(True))

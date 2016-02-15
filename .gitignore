@@ -4,7 +4,7 @@
 *.so
 *ACLiC_dict_rdict.pcm
 *__init__.py
-.log
+crab.log
 test/crabJobs/crab_*
 test/plots/*
 !dimuonMass_Run2015CD_25ns.pdf

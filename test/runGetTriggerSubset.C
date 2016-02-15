@@ -12,7 +12,7 @@ void runGetTriggerSubset()
 
 	for (int i=0; i<7; i++) {
 		TChain * chain = new TChain("rootuple/oniaTree","");
-		chain->Add("/eos/uscms/store/user/zhenhu/"+PD[i]+"/Rootuple_all.root"); 
+		chain->Add("root://cmsxrootd.fnal.gov//store/user/zhenhu/"+PD[i]+"/Rootuple_all.root"); 
 		GetTriggerSubset a(chain);
 		a.Loop(PD[i]+Trigger[i]);
 	}
