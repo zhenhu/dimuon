@@ -3,6 +3,7 @@
 #include "TLine.h"
 #include "TBox.h"
 #include "TASImage.h"
+#include <iostream>
 
 //
 // Global variables

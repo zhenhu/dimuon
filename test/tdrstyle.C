@@ -9,9 +9,9 @@
 
 // fixOverlay: Redraws the axis
 
-void fixOverlay() {
-  gPad->RedrawAxis();
-}
+//void fixOverlay() {
+//  gPad->RedrawAxis();
+//}
 
 void setTDRStyle() {
   TStyle *tdrStyle = new TStyle("tdrStyle","Style for P-TDR");

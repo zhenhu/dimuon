@@ -1,5 +1,14 @@
 #include "tdrstyle.C"
 #include "CMS_lumi.C"
+#include <TFile.h>
+#include <TTree.h>
+#include <TLorentzVector.h>
+#include <TH1F.h>
+#include <THStack.h>
+#include <TCanvas.h>
+#include <TLegend.h>
+#include <TFrame.h>
+#include <iostream>
 
 void GetHist(TString f, TH1F *h)
 {
@@ -16,7 +25,7 @@ void GetHist(TString f, TH1F *h)
 	Tree->SetBranchAddress("run", &run, &b_run);
 	Tree->SetBranchAddress("lumi", &lumi, &b_lumi);
 	Int_t nentries = (Int_t)Tree->GetEntries();
-	std::cout<<f<<" entries: "<<nentries<<std::endl;
+	cout<<f<<" entries: "<<nentries<<endl;
 	for (Long64_t kentry=0; kentry<nentries;kentry++) {
 		Long64_t lentry = Tree->LoadTree(kentry);
 		if (lentry < 0) break;
@@ -177,7 +186,7 @@ void DrawPlot() {
 	Latex.DrawLatex(8.7,100000*150,"#Upsilon");
 	Latex.DrawLatex(85,4000*150,"Z");
 
-	leg = new TLegend(0.58,0.58,0.94,0.92);
+	TLegend *leg = new TLegend(0.58,0.58,0.94,0.92);
 	leg->SetFillColor(0);
 	leg->SetHeader("Trigger paths");
 	leg->AddEntry(hphi,"#phi","f");
