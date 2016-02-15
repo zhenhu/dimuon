@@ -45,7 +45,6 @@ root -l runGetTriggerSubset.C++
 ```
 
 * Draw combined plot 
-Switch back to ROOT5
 ```
 root -l DrawPlot.C
 ```
