@@ -8,33 +8,31 @@ The Onia2MuMu Rootupler. This package is mean to be run after the BPH CompactSki
 * Setup: (should run with the same release in CompactSkim, but may run in any other)
 
 ```
-export SCRAM_ARCH=slc6_amd64_gcc491
-source /cvmfs/cms.cern.ch/cmsset_default.sh
-cmsrel CMSSW_7_4_6_patch6
-cd CMSSW_7_4_6_patch6/src/
+cmsrel CMSSW_9_2_10
+cd CMSSW_9_2_10/src/
 cmsenv
 git clone git@github.com:zhenhu/dimuon.git dimuon/Onia
 cd dimuon/Onia/
 scram b
 ```
 
-* Run: (use your favorite input sample)
+* Run local test: (use your favorite input sample)
 
 ```
 cd test
 vi runOnia2MuMuRootupler.py
 cmsRun runOnia2MuMuRootupler.py
 ```
+You may need to uodate the trigger paths in Onia/src/Onia2MuMuRootupler.cc
 
-* Produce root trees with this package for each dataset. 
+* Produce root trees with this package for each dataset: Charmonium, MuOnia, DoubleMuon, DoubleMuonLowMass
 
-You may need to add more trigger paths in Onia/src/Onia2MuMuRootupler.cc     
+The crab3 config: Onia/test/crabJobs/crab3_all.py
 
-The crab configs are in Onia/test/crabJobs/
 
 #Make the dimuom mass spectrum plot
 
-* Draw a plot for a single dataset 
+* (Optional) Draw a plot for a single dataset 
 ```
 root -l runSinglePD.C++
 ```
@@ -49,8 +47,9 @@ root -l runGetTriggerSubset.C++
 root -l DrawPlot.C
 ```
 
-#CompactSkim
-* Setup: (it is part of CMSSW_7_5_X onwards, but for now if you want to use it in CMSSW_7_4_X, you can do)
+#Official BPH CompactSkim
+
+* Setup: it has been part of CMSSW_7_5_X onwards, but for earlier version, you can do: 
 
 ```
 export SCRAM_ARCH=slc6_amd64_gcc491

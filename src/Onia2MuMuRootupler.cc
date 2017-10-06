@@ -197,21 +197,21 @@ UInt_t Onia2MuMuRootupler::getTriggerBits(const edm::Event& iEvent ) {
 		std::vector <unsigned int> bits_0, bits_1, bits_2, bits_3, bits_4, bits_5, bits_6, bits_7, bits_8, bits_9;
 		for ( int version = 1; version<9; version ++ ) {
 			std::stringstream ss0,ss1,ss2,ss3,ss4,ss5,ss6,ss7,ss8,ss9;
-			ss0<<"HLT_Dimuon16_Jpsi_v"<<version;
+			ss0<<"HLT_Dimuon25_Jpsi_v"<<version;
 			bits_0.push_back(TheTriggerNames.triggerIndex( edm::InputTag(ss0.str()).label().c_str()));
-			ss1<<"HLT_Dimuon13_PsiPrime_v"<<version;
+			ss1<<"HLT_Dimuon18_PsiPrime_v"<<version;
 			bits_1.push_back(TheTriggerNames.triggerIndex( edm::InputTag(ss1.str()).label().c_str()));
 			ss2<<"HLT_Dimuon13_Upsilon_v"<<version;
 			bits_2.push_back(TheTriggerNames.triggerIndex( edm::InputTag(ss2.str()).label().c_str()));
-			ss3<<"HLT_Dimuon10_Jpsi_Barrel_v"<<version;
+			ss3<<"HLT_Dimuon20_Jpsi_Barrel_Seagulls_v"<<version;
 			bits_3.push_back(TheTriggerNames.triggerIndex( edm::InputTag(ss3.str()).label().c_str()));
-			ss4<<"HLT_Dimuon8_PsiPrime_Barrel_v"<<version;
+			ss4<<"HLT_Dimuon10_PsiPrime_Barrel_Seagulls_v"<<version;
 			bits_4.push_back(TheTriggerNames.triggerIndex( edm::InputTag(ss4.str()).label().c_str()));
-			ss5<<"HLT_Dimuon8_Upsilon_Barrel_v"<<version;
+			ss5<<"HLT_Dimuon12_Upsilon_eta1p5_v"<<version;
 			bits_5.push_back(TheTriggerNames.triggerIndex( edm::InputTag(ss5.str()).label().c_str()));
 			ss6<<"HLT_Dimuon20_Jpsi_v"<<version;
 			bits_6.push_back(TheTriggerNames.triggerIndex( edm::InputTag(ss6.str()).label().c_str()));
-			ss7<<"HLT_Dimuon0_Phi_Barrel_v"<<version;
+			ss7<<"HLT_Dimuon14_Phi_Barrel_Seagulls_v"<<version;
 			bits_7.push_back(TheTriggerNames.triggerIndex( edm::InputTag(ss7.str()).label().c_str()));
 			ss8<<"HLT_DoubleMu4_3_Bs_v"<<version;
 			bits_8.push_back(TheTriggerNames.triggerIndex( edm::InputTag(ss8.str()).label().c_str()));

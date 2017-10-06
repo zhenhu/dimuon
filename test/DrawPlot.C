@@ -63,7 +63,7 @@ void DrawPlot() {
 
 	writeExtraText = true;       // if extra text
 	//extraText  = "Preliminary";  // default extra text is "Preliminary"
-	lumi_13TeV = "2.7 fb^{-1}";
+	lumi_13TeV = "L = 3.9 fb^{-1}";
 	lumi_8TeV  = "19.1 fb^{-1}"; // default is "19.7 fb^{-1}"
 	lumi_7TeV  = "4.9 fb^{-1}";  // default is "5.1 fb^{-1}"
 	int iPeriod = 4;    // 1=7TeV, 2=8TeV, 3=7+8TeV, 4=13TeV, 7=7+8+13TeV 
@@ -170,7 +170,7 @@ void DrawPlot() {
 	canv->SetLogx();
 	canv->SetLogy();
 
-	TH1F *hFrame= gPad->DrawFrame(0.3, 200, 200, 1e10); //Nov 13, Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_MuonPhys.txt
+	TH1F *hFrame= gPad->DrawFrame(0.3, 100, 200, 1e10); 
 	hFrame->SetXTitle("#mu^{+}#mu^{-} invariant mass [GeV]");
 	hFrame->SetYTitle("Events / GeV");
 
@@ -178,13 +178,14 @@ void DrawPlot() {
 	hAll->Draw("HISTsame");
 
 	TLatex Latex;
-	Latex.DrawLatex(0.7,20000*150,"#omega");
-	Latex.DrawLatex(0.955,800000*150,"#phi");
-	Latex.DrawLatex(2.6,3000000*150,"J/#psi");
-	Latex.DrawLatex(3.4,300000*150,"#psi'");
-	Latex.DrawLatex(4.6,40000*150,"B_{s}");
-	Latex.DrawLatex(8.7,100000*150,"#Upsilon");
-	Latex.DrawLatex(85,4000*150,"Z");
+	Latex.DrawLatex(0.5,1500000,"#eta");
+	Latex.DrawLatex(0.7,2500000,"#omega");
+	Latex.DrawLatex(0.955,40000000,"#phi");
+	Latex.DrawLatex(2.6,100000000,"J/#psi");
+	Latex.DrawLatex(3.4,25000000,"#psi'");
+	Latex.DrawLatex(4.6,5000000,"B_{s}");
+	Latex.DrawLatex(8.7,10000000,"#Upsilon");
+	Latex.DrawLatex(85,1000000,"Z");
 
 	TLegend *leg = new TLegend(0.58,0.58,0.94,0.92);
 	leg->SetFillColor(0);
@@ -203,6 +204,6 @@ void DrawPlot() {
 	canv->RedrawAxis();
 	canv->GetFrame()->Draw();
 
-	canv->SaveAs("plots/dimuonMass_Run2015CD_25ns.png");
-	canv->SaveAs("plots/dimuonMass_Run2015CD_25ns.pdf");
+	canv->SaveAs("plots/dimuonMass_Run2017_Json0711.png");
+	canv->SaveAs("plots/dimuonMass_Run2017_Json0711.pdf");
 }

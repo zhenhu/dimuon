@@ -7,7 +7,7 @@ process.MessageLogger.cerr.FwkReport.reportEvery = 500
 process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 
 process.source = cms.Source("PoolSource",
-   fileNames = cms.untracked.vstring('root://cmsxrootd.fnal.gov//store/group/lpcmuon/dimuon/Charmonium/Run2015D-Onia2MuMuPAT-v3/151209_052916/0000/Onia2MuMuPAT_1.root')
+   fileNames = cms.untracked.vstring('file:/eos/uscms/store/user/lpcmuon/Run2017/Charmonium/BPHSkim-v1-Run2017B-PromptReco-v1/170712_013151/0000/BPHSkim_106.root')
 )
 
 process.TFileService = cms.Service("TFileService",
